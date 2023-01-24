@@ -106,7 +106,13 @@ def main_handler(event, context):
 if __name__ == "__main__":
     user = os.environ['USER_PHONE']
     password = os.environ['USER_PWD']
-    step = str(randint(int(os.environ['STEP_MIN']), int(os.environ['STEP_MAX'])))
+    step = randint(int(os.environ['STEP_MIN']), int(os.environ['STEP_MAX']))
+    # todo: 判断今天是否休假，然后根据休假调整步数
+    # todo: 按照一个sin函数加上随机的抖动来调整步数
+    # todo: 按照一个比较浅的一次上升, y=0.01x
+    
     # step = os.environ['STEP']
     # step = str(randint(10123, 12302)) 
+
+    step = str(step)
     main()
